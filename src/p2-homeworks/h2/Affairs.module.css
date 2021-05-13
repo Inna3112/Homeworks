@@ -1,0 +1,32 @@
+.button {
+    width: 60px;
+    margin: 10px;
+    background: antiquewhite;
+    color: aqua;
+    outline: none;
+}
+.button:focus {
+    outline: gold solid 1px;
+}
+.button:active {
+    background: burlywood;
+}
+.active {
+    background: coral;
+}
+.affair {
+    display: flex;
+}
+.item {
+    margin: 10px;
+    width: 100px;
+}
+.high {
+    color: red;
+}
+.middle {
+    color: orange;
+}
+.low {
+    color: yellow;
+}
