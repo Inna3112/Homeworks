@@ -1,0 +1,34 @@
+.select {
+    width: 100px;
+    padding: 5px;
+    appearance: none;
+    /*чтобы убрать стрелочку селекта родную appearence none*/
+    cursor: pointer;
+    background: #003300;
+    background-image: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png");
+    background-repeat: no-repeat repeat;
+    background-position: right .7em top 30%, 0 0;
+    /*background-size: .65em auto, 100%;*/
+
+    border: 2px inset rgb(118, 118, 118);
+    color: #99ff99;
+}
+.select:focus {
+    outline: none;
+    border: 2px solid #99ff99;
+}
+.option {
+    color: #003300;
+    background: #99ff99;
+    /*padding: нельзя опциям добавить;*/
+}
+.option:checked {
+    color: #99ff99;
+    background: #003300;
+}
+.option:hover {
+    box-shadow: 0 0 10px 100px #FED20F inset;
+    transition: all .2s ease-in-out;
+    background: #dd3355;
+}
+
