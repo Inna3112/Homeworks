@@ -2,7 +2,9 @@ import React from "react";
 import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
 import {useDispatch, useSelector} from "react-redux";
 import {AppStoreType} from "./bll/store";
-import {initStateType, loadingAC} from "./bll/loadingReducer";
+import {loadingAC} from "./bll/loadingReducer";
+import loader from "./../../assets/images/loader.gif";
+
 
 function HW10() {
     const isLoading = useSelector<AppStoreType, boolean>(state => state.loading.isLoading)
@@ -25,7 +27,7 @@ function HW10() {
             {/*should work (должно работать)*/}
             {isLoading
                 ? (
-                    <div>крутилка...</div>
+                    <div>loader</div>
                 ) : (
                     <div>
                         <SuperButton onClick={setLoading}>set loading...</SuperButton>
