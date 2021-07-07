@@ -3,7 +3,7 @@ export type ThemeStateType = {
     theme: string
 }
 const initState: ThemeStateType = {
-    theme: 'red'
+    theme: 'some'
 };
 type ActionsType = ReturnType<typeof changeThemeAC>
 
