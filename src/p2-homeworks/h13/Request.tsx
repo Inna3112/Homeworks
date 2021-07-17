@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {ChangeEvent, useState} from "react";
 import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
 import SuperCheckbox from "../h4/common/c3-SuperCheckbox/SuperCheckbox";
 import {requestAPI} from "./RequestAPI";
@@ -10,10 +10,11 @@ function Request() {
     const [errorText, setErrorText] = useState('')
     const [disabled, setDisabled] = useState(false)
 
-
+    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
+        setChecked(e.currentTarget.checked)
+    }
 
     const onClickCallback = () => {
-        setChecked(!checked)
         setDisabled(true)
         requestAPI.checkedSuccess(checked)
             .then(response => {
@@ -26,8 +27,6 @@ function Request() {
                 setDisabled(false)
                 setResponseData('')
             })
-
-
     }
 
     return (
@@ -36,7 +35,8 @@ function Request() {
                 <SuperButton onClick={onClickCallback} disabled={disabled}>Click me)....</SuperButton>
             </div>
             <div>
-                <SuperCheckbox checked={checked}/> success
+                <SuperCheckbox checked={checked}
+                               onChange={onChangeCallback}/> success
             </div>
             <div>
                 {
