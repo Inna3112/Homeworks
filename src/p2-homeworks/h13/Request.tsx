@@ -8,17 +8,22 @@ function Request() {
     const [checked, setChecked] = useState<boolean>(false)
     const [responseData, setResponseData] = useState('')
     const [errorText, setErrorText] = useState('')
+    const [disabled, setDisabled] = useState(false)
+
 
 
     const onClickCallback = () => {
         setChecked(!checked)
+        setDisabled(true)
         requestAPI.checkedSuccess(checked)
             .then(response => {
                 setResponseData(response.data.errorText)
+                setDisabled(false)
                 setErrorText('')
             })
             .catch(error => {
                 setErrorText(error.response.data.errorText)
+                setDisabled(false)
                 setResponseData('')
             })
 
@@ -28,10 +33,10 @@ function Request() {
     return (
         <div>
             <div>
-                <SuperButton onClick={onClickCallback}>Click me)....</SuperButton>
+                <SuperButton onClick={onClickCallback} disabled={disabled}>Click me)....</SuperButton>
             </div>
             <div>
-                <SuperCheckbox checked={checked}/>
+                <SuperCheckbox checked={checked}/> success
             </div>
             <div>
                 {
