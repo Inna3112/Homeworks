@@ -25,4 +25,5 @@ input[type="range"]::-ms-thumb {
 
 .sliderStyle {
     width: 140px;
+    margin-left: 15px;
 }
