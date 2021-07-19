@@ -22,3 +22,7 @@ input[type="range"]::-moz-range-thumb {
 input[type="range"]::-ms-thumb {
     pointer-events: all;
 }
+
+.sliderStyle {
+    width: 140px;
+}
